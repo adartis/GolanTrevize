@@ -1,0 +1,460 @@
+/* File: styles.css */
+/* Reset default browser styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Colour palette and dimensions consolidated                     */
+/* ───────────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --primary-bg: #ffffff;         /* main background */
+  --section-bg: #f9f3f3;         /* very light maroon tint */
+  
+  /* Core colours */
+  --primary-color: #800000;      /* maroon as main brand */
+  --secondary-color: #a63c3c;    /* softer maroon/red */
+  --accent-color: #d9bcbc;       /* deep maroon-brown */
+  
+  /* Neutral / text */
+  --neutral: #d9bcbc;            /* muted maroon-tinted */
+  --text-color: #1a0000;         /* near-black with maroon undertone */
+  --footer-text: #664040;        /* muted maroon for footer */
+  --text-banner-colour: #f9f3f3; /* matches section background */
+  
+  /* Dimensions */
+  --header-height: 10vh;
+}
+
+/* Base body styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  background-color: var(--primary-bg);
+  line-height: 1.6;
+  /* Prevent content hiding behind fixed header */
+  padding-top: var(--header-height);
+}
+
+/* Header and navigation styles */
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-banner-colour);
+  font-weight: bold;
+  font-size: 1.3em;
+  margin: 0 1rem;       /* horizontal spacing between links */
+  transition: transform 0.3s ease; /* smooth hover effect */
+}
+
+nav a:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+
+nav b {
+  color: var(--text-banner-colour);
+  font-size: 1.3rem;
+}
+
+nav img.logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+  filter: invert(1); /* optional: better contrast */
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Main content sections                                          */
+/* ───────────────────────────────────────────────────────────── */
+
+section {
+  display: flex;
+  flex-direction: column;
+  background-color: #ccc;
+  padding: 2rem 1rem;
+  /* min-height: 100vh;  Remove this line unless necessary */
+  gap: 2rem;  /* optional spacing between heading and content */
+}
+
+/* If you want the first section to still fill viewport height */
+.intro:first-of-type {
+  min-height: auto; /* smaller than 100vh to reduce gap */
+  padding-bottom: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;  /* left column smaller, right column larger */
+  gap: 2rem;                        /* spacing between columns */
+  align-items: center;               /* vertically centre content */
+  justify-content: center;           /* horizontally centre within section */
+  width: 100%;                       /* full width of section */
+}
+
+.intro-article {
+  max-width: 800px;            /* optional: limit horizontal width */
+  margin: 0 auto;              /* centre horizontally */
+  min-height: 80vh;            /* occupy 70% of viewport height */
+  display: flex;               
+  flex-direction: column;      /* stack paragraphs vertically */
+  justify-content: center;     /* centre vertically within 70vh */
+  align-items: center;         /* optional: centre content horizontally */
+  text-align: left;          /* centre text */
+  padding: 1rem;               /* spacing inside container */
+  background-color: white;
+  border-radius: 8px;
+
+}
+
+.intro-article img {
+  width: 90vh;
+  height: 90vh;
+  object-fit: cover;    /* maintain aspect ratio and fill square */
+  border-radius: 8px;   /* optional rounded corners */
+}
+
+
+/* Optional: responsive adjustment */
+@media (max-width: 768px) {
+  .section-content {
+    grid-template-columns: 1fr;    /* stack columns on small screens */
+    gap: 1rem;
+  }
+}
+
+.intro {
+  padding: 1rem;
+  background-color: var(--section-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.coll1, .coll2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.coll2 {
+  margin-right: 6rem;
+}
+
+.profile-image {
+  max-width: 200px;
+  max-height: 300px;
+  min-width: 200px;
+  min-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Typography                                                     */
+/* ───────────────────────────────────────────────────────────── */
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--neutral);
+}
+
+p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Waffle image grid                                              */
+/* ───────────────────────────────────────────────────────────── */
+
+.waffle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 80rem;
+}
+
+.waffle-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.waffle-item img {
+  width: 20rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: sepia(10%) brightness(105%) contrast(95%) saturate(30%);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  margin: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.waffle-item:hover .overlay {
+  opacity: 1;
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Services page styling                                          */
+/* ───────────────────────────────────────────────────────────── */
+
+.service {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.1rem;
+  background-color: var(--section-bg);
+}
+
+.service:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  filter: sepia(10%) brightness(105%) contrast(95%) saturate(30%);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 15px;
+}
+
+.service-text {
+  width: 75%;
+  padding: 0.5rem;
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Mobile responsiveness                                          */
+/* ───────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .waffle {
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .service img {
+    width: 100%;
+  }
+
+  .service-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .section-content {
+    grid-template-columns: 1fr; /* stack columns on small screens */
+  }
+
+  .coll2 {
+    margin-right: 0;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Who We Are: values section                                     */
+/* ───────────────────────────────────────────────────────────── */
+
+#values {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: var(--neutral);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: transform 0.2s;
+}
+.value-card:hover {
+  transform: translateY(-4px);
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.card-content h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: black;
+}
+
+.card-content p {
+  margin: 0;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Team grid                                                      */
+/* ───────────────────────────────────────────────────────────── */
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.person {
+  display: flex;
+  align-items: flex-start;
+}
+
+.person img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.person-info {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .team {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────── */
+/* Contact form                                                   */
+/* ───────────────────────────────────────────────────────────── */
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+}
+
+form input,
+form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  width: 120px;
+  padding: 0.5rem;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contact-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+th {
+  background-color: var(--accent-color);  /* replace with your desired colour */
+}
+
+
+/* ───────────────────────────────────────────────────────────── */
+/* Footer                                                         */
+/* ───────────────────────────────────────────────────────────── */
+
+footer {
+  background-color: var(--neutral);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
