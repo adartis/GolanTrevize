@@ -147,6 +147,18 @@ section {
   border-radius: 8px;   /* optional rounded corners */
 }
 
+section img.diagram {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;   /* optional rounded corners */
+}
+
+.diagram-caption {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 0.5rem;
+  color: #555;
+}
 
 /* Optional: responsive adjustment */
 @media (max-width: 768px) {
@@ -201,6 +213,8 @@ p {
   color: var(--text-color);
   line-height: 1.6;
 }
+
+
 
 /* ───────────────────────────────────────────────────────────── */
 /* Waffle image grid                                              */
