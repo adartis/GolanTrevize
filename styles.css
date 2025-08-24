@@ -87,7 +87,6 @@ nav b {
 nav img.logo {
   width: 2rem;
   height: 2rem;
-  margin-right: 1rem;
   vertical-align: middle;
   filter: invert(1); /* optional: better contrast */
 }
@@ -119,12 +118,26 @@ section {
 .section-content {
   display: grid;
   grid-template-columns: 1fr 2fr;  /* left column smaller, right column larger */
-  gap: 2rem;                        /* spacing between columns */
+  gap: 0.1rem;                        /* spacing between columns */
   align-items: center;               /* vertically centre content */
   justify-content: center;           /* horizontally centre within section */
-  width: 100%;                       /* full width of section */
+  width: 70%;                       /* full width of section */
 }
 
+.coll1, .coll2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.coll1 {
+    margin-left: 45vh;
+}
+.coll2 {
+    margin-left: 10vh;
+}
 .intro-article {
   max-width: 800px;            /* optional: limit horizontal width */
   margin: 0 auto;              /* centre horizontally */
@@ -175,16 +188,6 @@ section img.diagram {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.coll1, .coll2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.coll2 {
-  margin-right: 6rem;
-}
 
 .profile-image {
   max-width: 200px;
@@ -334,9 +337,18 @@ p {
     grid-template-columns: 1fr; /* stack columns on small screens */
   }
 
-  .coll2 {
-    margin-right: 0;
-  }
+
+}
+
+
+.pdf-iframe {
+  width: 100%;                /* responsive width */
+  height: 600px;              /* fixed or use vh */
+  border: 2px solid #800000;  /* custom border */
+  border-radius: 10px;        /* rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);  /* shadow */
+  display: block;             /* remove inline spacing */
+  margin: 1rem auto;          /* centre horizontally */
 }
 
 /* ───────────────────────────────────────────────────────────── */
@@ -472,3 +484,4 @@ footer {
   font-size: 0.9rem;
   color: #555;
 }
+

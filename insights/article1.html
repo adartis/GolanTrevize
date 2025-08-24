@@ -10,23 +10,11 @@
 <body>
   <!-- Header -->
   <header>
-    <nav>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div style="margin-right: 20rem; margin-left: 1rem; justify-content: left;">
-          <b>Golan Trevize</b>
-        </div>
-        <div style="margin-left: 1rem;">
-          <a href="/index.html">Home</a>
-          <a href="/about.html">About</a>
-          <a href="/insights.html">Insights</a>
-          <a href="/tools.html">Tools</a>
-          <img src="../images/envelope-regular-full.svg" alt="Logo" class="logo" />
-          <img src="../images/square-linkedin-brands-solid-full.svg" alt="Logo" class="logo" />
 
-        </div>
-      </div>
-    </nav>
+    <div id="navbar">Loading navigation...</div>
   </header>
+  <!-- Main content -->
+
 
   <main>
     <!-- Analysis Section -->
@@ -123,4 +111,14 @@
     <p>Golan Trevize 2025</p>
   </footer>
 </body>
+
+  <script>
+    fetch('../navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
 </html>
