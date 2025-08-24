@@ -129,7 +129,6 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
 
 .coll1 {
@@ -138,6 +137,7 @@ section {
 .coll2 {
     margin-left: 10vh;
 }
+
 .intro-article {
   max-width: 800px;            /* optional: limit horizontal width */
   margin: 0 auto;              /* centre horizontally */
